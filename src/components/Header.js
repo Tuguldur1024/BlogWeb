@@ -2,9 +2,9 @@ import SearchBar from "../icons/SearchBar";
 
 const Header = () => {
   return (
-    <div className="flex flex-start gap-28 py-8">
+    <div className="flex flex-start gap-[120px] py-8">
       <img src="/images/MetaBlog.png" />
-      <div className="flex gap-5 items-center w-full">
+      <div className="flex gap-5 items-center w-full justify-between">
         <div className="justify-center items-center flex gap-10">
           <p>Home</p>
           <p> Blog </p>
