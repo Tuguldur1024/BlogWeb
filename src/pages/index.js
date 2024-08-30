@@ -7,8 +7,8 @@ import Footer from "../components/Footer";
 
 const Home = () => {
   return (
-    <div className="max-w-screen-xl mx-auto ">
-      <div className="my-8">
+    <div className="max-w-screen-xl mx-auto flex gap-25 flex-col">
+      <div className="mb-25 px-5">
         <Header />
       </div>
       <div>
