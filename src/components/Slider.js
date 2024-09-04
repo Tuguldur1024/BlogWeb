@@ -22,6 +22,7 @@ const Slider = () => {
         </div>
         <div className="h-10 w-10 border border-solid flex items-center justify-center rounded-lg">
           <SlArrowRight />
+          
         </div>
       </div>
     </div>

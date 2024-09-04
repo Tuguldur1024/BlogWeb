@@ -1,4 +1,5 @@
 import NewsButton from "./NewsButton";
+import moment from "moment";
 
 const NewsCard = (props) => {
   const { imageUrl, category, date, title } = props;
@@ -8,7 +9,10 @@ const NewsCard = (props) => {
       <div className="flex flex-col gap-4">
         <NewsButton category={category} />
         <p className="font-semibold text-2xl"> {title} </p>
-        <p className="font-normal text-base text-gray-400"> {date} </p>
+        <p className="font-normal text-base text-gray-400">
+          {" "}
+          {moment(date).format("LL")}{" "}
+        </p>
       </div>
     </div>
   );
