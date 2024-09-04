@@ -18,7 +18,9 @@ const Home = () => {
         <div>
           <Slider />
         </div>
-        <div>{/* <Trending /> */}</div>
+        <div className="mb-[100px]">
+          <Trending />
+        </div>
         <div className="flex flex-col gap-8">
           <AllBlogHeader />
           <AllBlogPost />

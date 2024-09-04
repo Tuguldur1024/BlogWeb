@@ -1,13 +1,15 @@
 const TrendingNews = (props) => {
-  const [category, title] = props;
+  const { category, title, image } = props;
   return (
-    <div className={`px-7 pb-7`}>
-      <img src={"/images/Background.png"} className="w-full h-full" />
+    <div
+      style={{ backgroundImage: `url(${image})` }}
+      className={`px-7 pb-7 w-full flex items-end h-[320px] `}
+    >
       <div>
-        <button className="py-1 px-2.5 rounded-md bg-blue-600 font-medium text-xs text-white">
+        <button className="py-1 px-2.5 rounded-md bg-blue-600 font-medium text-xs text-white mb-4">
           {category}
         </button>
-        <p className="font-semibold text-lg text-white"> {title} </p>
+        <p className="font-semibold text-lg text-white">{title}</p>
       </div>
     </div>
   );

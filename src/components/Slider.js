@@ -2,8 +2,24 @@ import Button from "./Button";
 import Image from "next/image";
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
+import { useState } from "react";
+import useSWR from "swr";
 
+const url = "https://dev.to/api/articles?top=2";
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const Slider = () => {
+  const { data, error, loading } = useSWR(url, fetcher);
+  const [index, setindex] = useState(0);
+  if (error) {
+    return <p> ...error </p>;
+  }
+  if (!data) {
+    return <p> ...loading </p>;
+  }
+  if (!data) return null;
+
+  const posts = [...data]?.slice(0, 4);
+
   return (
     <div className="max-w-screen-xl relative">
       <img src="/images/Victoria.jpg" className="bg-cover w-full" />
@@ -22,7 +38,6 @@ const Slider = () => {
         </div>
         <div className="h-10 w-10 border border-solid flex items-center justify-center rounded-lg">
           <SlArrowRight />
-          
         </div>
       </div>
     </div>
