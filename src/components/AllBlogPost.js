@@ -15,7 +15,7 @@ const AllBlogPost = () => {
     return <p> ...loading </p>;
   }
   const loadMore = () => {
-    setNewsNumber((n) => n + 3);
+    setNewsNumber((n) => n + 6);
   };
   const posts = [...data].slice(0, newsNumber);
   return (

@@ -6,8 +6,6 @@ import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
 import AllBlogHeader from "../components/AllBlogHeader";
 
-import { BrowserRouter } from "react-router-dom";
-
 const Home = () => {
   return (
     <div className="w-full flex flex-col gap-[69px]">

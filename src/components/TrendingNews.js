@@ -3,7 +3,7 @@ const TrendingNews = (props) => {
   return (
     <div
       style={{ backgroundImage: `url(${image})` }}
-      className={`px-7 pb-7 w-full flex items-end h-[320px] `}
+      className={`px-7 pb-7 w-full flex items-end h-[348px] `}
     >
       <div>
         <button className="py-1 px-2.5 rounded-md bg-blue-600 font-medium text-xs text-white mb-4">
