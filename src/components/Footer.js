@@ -3,6 +3,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import MetaBlogLogo from "../icons/MetaBlogLogo";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -19,9 +20,13 @@ const Footer = () => {
           <p> Phone : 880 123 456 789 </p>
         </div>
         <div className="flex flex-col gap-2">
-          <p> Home </p>
+          <Link href={"/"}>
+            <button> Home </button>
+          </Link>
           <p> Blog </p>
-          <p> Contact </p>
+          <Link href={"/contactUs"}>
+            <button> Contact </button>
+          </Link>
         </div>
         <div className="flex gap-[26.67px]">
           <FaFacebook />

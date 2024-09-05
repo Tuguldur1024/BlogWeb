@@ -1,5 +1,6 @@
 import NewsButton from "./NewsButton";
 import moment from "moment";
+import Link from "next/link";
 
 const NewsCard = (props) => {
   const { imageUrl, category, date, title } = props;
@@ -8,12 +9,11 @@ const NewsCard = (props) => {
       <img src={imageUrl} height={240} width={360} className="rounded-md" />
       <div className="flex flex-col gap-4">
         <div className="flex gap-2 flex-wrap">
-        {category.map((one)=>{
-          return <NewsButton category={one} />
-        })}
+          {category.map((one) => {
+            return <NewsButton category={one} />;
+          })}
         </div>
-        
-        
+
         <p className="font-semibold text-2xl"> {title} </p>
         <p className="font-normal text-base text-gray-400">
           {" "}

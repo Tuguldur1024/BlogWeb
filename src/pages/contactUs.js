@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 const ContactUs = () => {
   return (
-    <div className="w-full flex flex-col gap-[69px]">
+    <div className="w-full flex flex-col gap-[69px] max-w-screen-xl mx-auto">
       <div className="mb-[31px] px-5">
         <Header />
       </div>
