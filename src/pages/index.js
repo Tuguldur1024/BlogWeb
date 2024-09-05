@@ -4,7 +4,7 @@ import Trending from "../components/Trending";
 import AllBlogPost from "../components/AllBlogPost";
 import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
-import AllBlogHeader from "../components/AllBlogHeader";
+
 
 const Home = () => {
   return (
@@ -19,8 +19,7 @@ const Home = () => {
         <div className="mb-[100px]">
           <Trending />
         </div>
-        <div className="flex flex-col gap-8">
-          <AllBlogHeader />
+        <div className="flex flex-col">
           <AllBlogPost />
         </div>
         <div>
