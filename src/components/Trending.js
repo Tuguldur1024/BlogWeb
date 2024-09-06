@@ -16,7 +16,7 @@ const Trending = () => {
   }
 
   if (!data) return null;
-  const posts = [...data]?.slice(4, 8);
+  const posts = [...data]?.slice(8,12);
   return (
     <div className="flex flex-col pb-3 gap-[30px] px-5">
       <p className="font-bold text-2xl text-zinc-900"> Trending </p>

@@ -25,8 +25,6 @@ const AllBlogPost = () => {
     return <p> ...error </p>;
   }
   let posts = blogs.slice(0, newsNumber);
-  console.log(blogs);
-  console.log(url);
   const loadMore = () => {
     setNewsNumber((n) => n + 6);
   };
@@ -48,16 +46,16 @@ const AllBlogPost = () => {
         <p className="font-bold text-2xl text-zinc-900"> All Blog Post </p>
         <div className="flex justify-between font-bold text-xs text-slate-600">
           <div className="flex gap-5 flex-wrap">
-            <p onClick={() => filter("all")}>all</p>
-            {categories.map((category) => {
+            <button onClick={() => filter("all")}>all</button>
+            {categories.map((category,index) => {
               return (
-                <p onClick={() => filter(category.name)}> {category.name} </p>
+                <button className="hover:border hover:border-solid hover:border-rose-500" onClick={() => filter(category.name)}> {category.name} </button>
               );
             })}
           </div>
-          {isclosed && <p onClick={viewAll}> View All </p>}
+          {isclosed && <button onClick={viewAll}> View All </button>}
         </div>
-        {!isclosed && <p onClick={closeAll}> Close All </p>}
+        {!isclosed && <button onClick={closeAll}> Close All </button>}
       </div>
       <div className="flex flex-col items-center">
         <div className="flex flex-wrap mx-auto justify-around">

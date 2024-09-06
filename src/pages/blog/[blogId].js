@@ -4,6 +4,7 @@ import parse from "html-react-parser";
 import moment from "moment";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Markdown from 'react-markdown'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 export default function Page() {
@@ -18,7 +19,7 @@ export default function Page() {
   if (isLoading) {
     return <div> ...isLoading </div>;
   }
-
+console.log(blog)
   return (
     <div className="w-full flex flex-col">
       <div className="mb-[100px] px-5">
@@ -38,7 +39,8 @@ export default function Page() {
           </div>
         </div>
         <img src={`${blog.social_image}`} />
-        <div>{parse(blog.body_html)}</div>
+        {/* <div>{parse(blog.body_html)}</div> */}
+        <Markdown>{blog.body_markdown}</Markdown>
       </div>
       <div className="w-full bg-neutral-100 py-16 flex items-center justify-center">
         <Footer />
