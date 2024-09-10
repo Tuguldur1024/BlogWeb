@@ -9,8 +9,8 @@ const NewsCard = (props) => {
       <img src={imageUrl} height={240} width={360} className="rounded-md" />
       <div className="flex flex-col gap-4">
         <div className="flex gap-2 flex-wrap">
-          {category.map((one) => {
-            return <NewsButton category={one} />;
+          {category.map((one, index) => {
+            return <NewsButton key={index} category={one} />;
           })}
         </div>
 
