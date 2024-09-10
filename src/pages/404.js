@@ -13,8 +13,8 @@ const A404Page = () => {
         <div className="flex flex-col gap-5 w-[375px]">
           <p className="font-semibold text-2xl"> Page Not Found</p>
           <p className="font-normal text-lg text-[#696A75]">
-            We're sorry, This page is unknown or does not exist the page you are
-            looking for.
+            We are sorry, This page is unknown or does not exist the page you
+            are looking for.
           </p>
           <Link href={"/"}>
             <button className="px-4 py-2.5 bg-[#4B6BFB] text-white rounded-md">

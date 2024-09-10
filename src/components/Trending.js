@@ -16,14 +16,14 @@ const Trending = () => {
   }
 
   if (!data) return null;
-  const posts = [...data]?.slice(8,12);
+  const posts = [...data]?.slice(8, 12);
   return (
     <div className="flex flex-col pb-3 gap-[30px] px-5">
       <p className="font-bold text-2xl text-zinc-900"> Trending </p>
       <div className="flex gap-5">
         {posts?.map((post, index) => {
           return (
-            <Link href={`blog/${post.id}`}>
+            <Link key={index} href={`blog/${post.id}`}>
               <TrendingNews
                 key={index}
                 image={post.cover_image}

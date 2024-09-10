@@ -47,9 +47,16 @@ const AllBlogPost = () => {
         <div className="flex justify-between font-bold text-xs text-slate-600">
           <div className="flex gap-5 flex-wrap">
             <button onClick={() => filter("all")}>all</button>
-            {categories.map((category,index) => {
+            {categories.map((category, index) => {
               return (
-                <button className="hover:border hover:border-solid hover:border-rose-500" onClick={() => filter(category.name)}> {category.name} </button>
+                <button
+                  key={index}
+                  className="hover:border hover:border-solid hover:border-rose-500"
+                  onClick={() => filter(category.name)}
+                >
+                  {" "}
+                  {category.name}{" "}
+                </button>
               );
             })}
           </div>
@@ -61,9 +68,8 @@ const AllBlogPost = () => {
         <div className="flex flex-wrap mx-auto justify-around">
           {posts.map((oneArticle) => {
             return (
-              <Link href={`blog/${oneArticle.id}`}>
+              <Link key={oneArticle.id} href={`blog/${oneArticle.id}`}>
                 <NewsCard
-                  key={oneArticle.id}
                   imageUrl={oneArticle.social_image}
                   category={oneArticle.tag_list}
                   date={oneArticle.readable_publish_date}
