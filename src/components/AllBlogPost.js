@@ -2,6 +2,7 @@ import useSWR from "swr";
 import NewsCard from "./NewsCard";
 import { useState } from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -90,3 +91,20 @@ const AllBlogPost = () => {
   );
 };
 export default AllBlogPost;
+
+export const getServerSideProps = async () => {
+  try {
+    const response = await fetch("https://dev.to/api/articles");
+    const result = await response.json();
+
+    return {
+      props: {
+        articles: result,
+      },
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
+};

@@ -4,7 +4,8 @@ import parse from "html-react-parser";
 import moment from "moment";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Markdown from 'react-markdown'
+import Markdown from "react-markdown";
+import { notFound } from "next/navigation";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 export default function Page() {
@@ -19,7 +20,7 @@ export default function Page() {
   if (isLoading) {
     return <div> ...isLoading </div>;
   }
-console.log(blog)
+  console.log(blog);
   return (
     <div className="w-full flex flex-col">
       <div className="mb-[100px] px-5">
@@ -48,3 +49,10 @@ console.log(blog)
     </div>
   );
 }
+
+// export const getServerSideProps = async (context) => {
+//   const id = context.query
+//   try{
+//     const response = fetch()
+//   }
+// };
