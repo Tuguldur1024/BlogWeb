@@ -5,10 +5,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const [numberofcategory, setNumberOfCategory] = useState(5);
+const [categoryName, setCategoryName] = useState("all");
 
-const AllBlogPost = () => {
-  const [categoryName, setCategoryName] = useState("all");
-  const [numberofcategory, setNumberOfCategory] = useState(5);
+const AllBlogPost = (props) => {
+  const { articles } = props;
   const url = `https://dev.to/api/articles?tag=${categoryName}`;
   const categoryUrl = `https://dev.to/api/tags?per_page=${numberofcategory}`;
 
@@ -94,7 +95,9 @@ export default AllBlogPost;
 
 export const getServerSideProps = async () => {
   try {
-    const response = await fetch("https://dev.to/api/articles");
+    const response = await fetch(
+      `https://dev.to/api/articles?tag=${categoryName}`
+    );
     const result = await response.json();
 
     return {

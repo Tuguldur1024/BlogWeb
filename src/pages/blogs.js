@@ -25,8 +25,8 @@ export const BlogsPage = (props) => {
 export default BlogsPage;
 
 export const getServerSideProps = async (context) => {
-  console.log(context);
   const { tag } = context.query;
+  console.log(tag);
   try {
     const response = await fetch(`https://dev.to/api/articles?tag=${tag}`);
     const data = await response.json();
